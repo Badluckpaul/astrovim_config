@@ -1,8 +1,10 @@
-# AstroNvim User Configuration Example
+# AstroNvim Setup Version 1
+
+## AstroNvim User Configuration
 
 A user configuration template for [AstroNvim](https://github.com/AstroNvim/AstroNvim)
 
-## 🛠️ Installation
+### 🛠️ Installation
 
 #### Make a backup of your current nvim and shared folder
 

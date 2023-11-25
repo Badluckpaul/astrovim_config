@@ -2,21 +2,45 @@ return {
   -- customize alpha options
   {
     "goolord/alpha-nvim",
+    enabled = true,
     opts = function(_, opts)
       -- customize the dashboard header
+      -- Calvin S: https://patorjk.com/software/taag/
       opts.section.header.val = {
-        " █████  ███████ ████████ ██████   ██████",
-        "██   ██ ██         ██    ██   ██ ██    ██",
-        "███████ ███████    ██    ██████  ██    ██",
-        "██   ██      ██    ██    ██   ██ ██    ██",
-        "██   ██ ███████    ██    ██   ██  ██████",
-        " ",
-        "    ███    ██ ██    ██ ██ ███    ███",
-        "    ████   ██ ██    ██ ██ ████  ████",
-        "    ██ ██  ██ ██    ██ ██ ██ ████ ██",
-        "    ██  ██ ██  ██  ██  ██ ██  ██  ██",
-        "    ██   ████   ████   ██ ██      ██",
+        [[        _______________________________________        ]],
+        [[       |,---"-----------------------------"---,|       ]],
+        [[       ||___   get some work done.........    ||       ]],
+        [[       ||====\ :HHHHHHHHHHHHHHHHHHHHHHHHHHH   ||       ]],
+        [[       ||=====):H c> nvim                 H   ||       ]],
+        [[       ||====/ :H ╔═╗╔═╗╔╦╗╦═╗╔═╗╦  ╦╦╔╦╗ H   ||       ]],
+        [[       ||      :H ╠═╣╚═╗ ║ ╠╦╝║ ║╚╗╔╝║║║║ H   ||       ]],
+        [[       ||PORTFO:H ╩ ╩╚═╝ ╩ ╩╚═╚═╝ ╚╝ ╩╩ ╩ H   ||       ]],
+        [[       ||      :HHHHHHHHHHHHHHHHHHHHHHHHHHH   ||       ]],
+        [[       ||_____,_________________________,_____||       ]],
+        [[       |)_____)---.| Paul's Setup |.----(_____(|       ]],
+        [[     //"""""""|_____|=----------=|______|"""""""\      ]],
+        [[    // _| _| _| _| _| _| _| _| _| _| _| _| _| _| \     ]],
+        [[   // ___| _| _| _| _| _| _| _| _| _| _| _|  |  | \    ]],
+        [[  |/ ___| _| _| _| _| _| _| _| _| _| _| _| ______| \   ]],
+        [[  / __| _| _| _| _| _| _| _| _| _| _| _| _| _| ___| \  ]],
+        [[ / _| _| _| _| ________________________| _| _| _| _| \ ]],
+        [[|------"--------------------------------------"-------|]],
+        [[`-----------------------------------------------------']],
       }
+      opts.section.header.opts.hl = "DashboardHeader"
+      local button = require("astronvim.utils").alpha_button
+      opts.section.buttons.val = {
+        button("LDR n  ", "  New File  "),
+        button("LDR f f", "  Find File  "),
+        button("LDR f o", "󰈙  Recents  "),
+        button("LDR f w", "󰈭  Find Word  "),
+        button("LDR f '", "  Bookmarks  "),
+        button("LDR S l", "  Last Session  "),
+      }
+
+      opts.config.layout[1].val = vim.fn.max { 2, vim.fn.floor(vim.fn.winheight(0) * 0.2) }
+      opts.config.layout[3].val = 5
+      opts.config.opts.noautocmd = true
       return opts
     end,
   },
