@@ -18,7 +18,7 @@ return {
   },
 
   -- Set colorscheme to use
-  colorscheme = "astrodark",
+  colorscheme = "monokai-pro",
 
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
   diagnostics = {
@@ -54,7 +54,7 @@ return {
     },
   },
 
-  -- Configure require("lazy").setup() options
+  -- Configure require("lazy").setup()  ptions
   lazy = {
     defaults = { lazy = true },
     performance = {
